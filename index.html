@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 >
+            Music Player
+        </h1>
+
+        <div class="player">
+            <div class="music-info">
+                <h2 id="title">Song Title</h2>
+                <p id="artist">Artist Name</p>
+            </div>
+            <audio id="audio" controls></audio>
+            <div class="controls">
+                <button id="prev" class="control-btn">Prev</button>
+                <button id="play" class="control-btn">Play</button>
+                <button id="next" class="control-btn">Next</button>
+            </div>
+        </div>
+
+        <div class="add-music">
+            <h2>Add New Music</h2>
+            <form id="music-form">
+                <input type="text" id="new-title" placeholder="Song Title" required>
+                <input type="text" id="new-artist" placeholder="Artist Name" required>
+                <input type="file" id="new-audio" accept="audio/*" required>
+                <button type="submit" class="control-btn">Add Music</button>
+            </form>
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

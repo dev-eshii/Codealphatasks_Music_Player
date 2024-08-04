@@ -1,0 +1,165 @@
+/* styles.css */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kalnia+Glaze:wght@100..700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #121212; /* Dark background */
+    font-family: 'Arial', sans-serif;
+    color: #f0f0f0;
+    background-image: linear-gradient(to right top, #000000, #371022, #671046, #970775, #c306af);
+}
+h1{
+    font-family: dancing script;
+}
+   
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.add-music {
+    background: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+}
+
+.add-music h2 {
+    margin: 0 0 15px;
+}
+
+.add-music input, .add-music button {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    margin: 5px 0;
+    width: calc(100% - 22px);
+}
+
+.add-music input {
+    background: #333;
+    color: #f0f0f0;
+}
+
+.add-music button {
+    background: #413a38;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-music button:hover {
+    background: #ff008d;
+    transform: scale(1.1);
+}
+
+.player {
+    background: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+}
+
+.music-info {
+    margin-bottom: 15px;
+}
+
+.music-info h2 {
+    margin: 0;
+}
+
+.music-info p {
+    margin: 5px 0 15px;
+    color: #b0b0b0;
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+}
+
+.control-btn {
+    background: #ffffff;
+    border: none;
+    outline: none;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.control-btn::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+
+}
+
+.control-btn::before{
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite ;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+    opacity: 1;
+}
+@keyframes glowing{
+    0%{background-position: 0 0;}
+    50%{background-position: 350% 0;}
+    100%{background-position: 0 0;}
+}
+
+
+.control-btn:hover::before{
+    opacity: 1;
+}
+.control-btn:hover::after{
+    background: transparent;
+}
+.control-btn:active{
+    color: #000;
+    font-weight: bold;
+}
